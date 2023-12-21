@@ -10,4 +10,9 @@ class PrototypesController < ApplicationController
       redirect_to action: :index
     end
   end
+
+  private
+  def prototype_params
+    params.require(:prototype).permit(:title, :catch_copy, :concept, :image)
+  end
 end
