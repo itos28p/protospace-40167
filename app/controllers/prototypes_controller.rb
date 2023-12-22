@@ -3,7 +3,7 @@ class PrototypesController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @prototypes = Prototype.all
+    @prototype = Prototype.all
   end
 
   def move_to_index
@@ -17,7 +17,7 @@ class PrototypesController < ApplicationController
   end
 
   def create
-    @prototype = current_user.prototypes.build(prototype_params)
+    @prototype = current_user.prototypes.new(prototype_params)
     
     if @prototype.save
       redirect_to "/prototypes", notice: 'Prototype was successfully created.'
