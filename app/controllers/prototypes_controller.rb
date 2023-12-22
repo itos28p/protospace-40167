@@ -20,7 +20,7 @@ class PrototypesController < ApplicationController
     @prototype = current_user.prototypes.build(prototype_params)
     
     if @prototype.save
-      redirect_to prototypes_path, notice: 'Prototype was successfully created.'
+      redirect_to "/prototypes", notice: 'Prototype was successfully created.'
     else
       render :new
     end
