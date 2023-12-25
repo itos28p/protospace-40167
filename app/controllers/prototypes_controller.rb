@@ -17,6 +17,7 @@ class PrototypesController < ApplicationController
       redirect_to root_path
     else
       render :new, status: :unprocessable_entity
+      Rails.logger.error(@prototype.errors.full_messages.join(", "))
     end
   end
 
